@@ -1,7 +1,9 @@
+import UrlForm from "./components/UrlForm";
+
 function App() {
   return (
     <div>
-      <p>Funciona!!!</p>
+      <UrlForm />
     </div>
   );
 }
