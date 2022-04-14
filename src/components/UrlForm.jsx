@@ -20,7 +20,7 @@ function UrlForm() {
   }
 
   return (
-    <div>
+    <div className="form">
       <form onSubmit={handleSubmit}>
         {/* destination: {url} */}
         <h1>Get Space URL Generator</h1>
@@ -31,21 +31,27 @@ function UrlForm() {
         <input
           type="text"
           name="longUrl"
+          className="longUrl"
           id="longUrl"
           placeholder="https://example.com"
           onChange={(e) => setUrl(e.target.value)}
         />
         <br />
+        <br />
         {/* <Button type="submit">Create a Link</Button> */}
-        <button type="submit" className="submit">
-          <span>Create a Link</span>
-          <div className="liquid"></div>
+        <button type="submit" className="button">
+          Get in touch
         </button>
       </form>
+      <br />
       {shortUrl ? (
         <div>
           <p>
-            <a href={obj.fullUrl} target={"_blank noreferrer"}>
+            <a
+              className="shorLink"
+              href={obj.fullUrl}
+              target={"_blank noreferrer"}
+            >
               {shortUrl}
             </a>
           </p>
