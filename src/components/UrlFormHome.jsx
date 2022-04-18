@@ -7,7 +7,7 @@ import { Alert } from "@mui/material";
 import imageHome from "../assets/img/getSpace_Home.png";
 import LogoImg from "../assets/img/logoPlanet.png";
 
-function UrlForm() {
+function UrlFormHome() {
   const [url, setUrl] = useState();
   let [shortUrl, setShortUrl] = useState([]);
   let [obj, setObj] = useState([]);
@@ -99,4 +99,4 @@ function UrlForm() {
     </div>
   );
 }
-export default UrlForm;
+export default UrlFormHome;
