@@ -234,6 +234,18 @@ span {
   height: 25px;
 }
 
+.sign {
+  display: flex;
+  flex-direction: row;
+  width: 10%;
+  justify-content: space-around;
+}
+.signin {
+  border: none;
+  background-color: transparent;
+  font-size: 15px;
+}
 .signup {
   background-color: aqua;
+  font-size: 15px;
 }

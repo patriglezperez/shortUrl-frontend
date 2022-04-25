@@ -41,7 +41,11 @@ function UrlFormHome() {
             <img src={LogoImg} alt="logo" className="logo" />
             <p>getSpace</p>
           </div>
-          <p>Account</p>
+
+          <div className="sign">
+            <input type="button" value="Account" className="signin" />
+            <input type="button" value="Sign up" className="signup" />
+          </div>
         </div>
         <Alert
           className={copied === false ? "notVisible " : ""}
@@ -49,9 +53,6 @@ function UrlFormHome() {
         >
           Url successfully copied!
         </Alert>
-      </div>
-      <div className="signup">
-        <input type="button" value="Sign up" className="signup" />
       </div>
       <div className="page">
         <div className="form">
@@ -78,12 +79,12 @@ function UrlFormHome() {
 
               <button type="submit" className="button">
                 <span>Create</span>
-                <div class="line"></div>
-                <div class="line-2"></div>
-                <div class="speak"></div>
-                <div class="speak one"></div>
-                <div class="speak two"></div>
-                <div class="speak three"></div>
+                <div className="line"></div>
+                <div className="line-2"></div>
+                <div className="speak"></div>
+                <div className="speak one"></div>
+                <div className="speak two"></div>
+                <div className="speak three"></div>
               </button>
             </div>
           </form>
