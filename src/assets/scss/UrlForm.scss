@@ -202,50 +202,7 @@ span {
   }
 }
 
-/*NavBar*/
-
-.nav {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  align-items: center;
-  padding: 20px;
-  background-color: #0000ff1b;
-}
-.navleft {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: left;
-  align-items: center;
-  p {
-    margin-left: 10px;
-  }
-}
-
-/*Imagen fondo Home*/
-.imageHome {
-  width: 40%;
-}
-
-/*Imagen logo*/
-.logo {
-  width: 25px;
-  height: 25px;
-}
-
-.sign {
-  display: flex;
-  flex-direction: row;
-  width: 10%;
-  justify-content: space-around;
-}
-.signin {
-  border: none;
-  background-color: transparent;
-  font-size: 15px;
-}
-.signup {
-  background-color: aqua;
-  font-size: 15px;
-}
+// /*Imagen fondo Home*/
+// .imageHome {
+//   width: 40%;
+// }
