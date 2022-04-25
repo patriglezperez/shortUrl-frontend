@@ -5,23 +5,23 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Alert } from "@mui/material";
 import LogoImg from "../assets/img/rocket.png";
-
 function UrlFormHome() {
   const [url, setUrl] = useState();
   let [shortUrl, setShortUrl] = useState([]);
   let [obj, setObj] = useState([]);
   const [copied, setCopied] = useState(false);
+  let [givefullUrl, setGiveFullUrl] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setCopied(false);
     }, 2000);
-    return () => {
-      clearTimeout(timer);
-    };
+
+    return () => clearTimeout(timer);
   }, [copied]);
 
-  async function handleSubmit(e) {
+  //Peticion para que nos cree una url corta
+  async function handleCreate(e) {
     e.preventDefault();
     setShortUrl(null);
     const result = await axios
@@ -31,6 +31,19 @@ function UrlFormHome() {
     console.log("result", result);
     setShortUrl(result.shortUrl);
     setObj(result);
+  }
+
+  //Peticion a la corta para que nos traiga la larga
+  async function findFullUrl(shortUrl) {
+    setGiveFullUrl("");
+    const result2 = await axios
+      .get(`${SERVER_ENDPOINTS}/api/urls/find/${shortUrl}`)
+      .then((res) => res.data.result);
+
+    setGiveFullUrl(result2.fullUrl);
+    console.log("result2", result2);
+    console.log("result short Url", givefullUrl);
+    return givefullUrl;
   }
 
   return (
@@ -54,9 +67,10 @@ function UrlFormHome() {
           Url successfully copied!
         </Alert>
       </div>
+
       <div className="page">
         <div className="form">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleCreate}>
             <h1 className="title">
               Get Space <br />
               <span>URL Generator</span>
@@ -76,7 +90,6 @@ function UrlFormHome() {
               />
               <br />
               <br />
-
               <button type="submit" className="button">
                 <span>Create</span>
                 <div className="line"></div>
@@ -93,13 +106,18 @@ function UrlFormHome() {
             <div className="notVisible"></div>
           ) : (
             <div>
-              <CopyToClipboard text={shortUrl} onCopy={() => setCopied(true)}>
-                <div
-                  className="card"
-                  href={obj.fullUrl}
-                  target={"_blank noreferrer"}
-                >
-                  <p className={copied ? "copied" : ""}>{shortUrl}</p>
+              <CopyToClipboard
+                text={shortUrl}
+                onCopy={(e) => {
+                  setCopied(true);
+                  findFullUrl(shortUrl);
+                  return givefullUrl;
+                }}
+              >
+                <div className="card">
+                  <p href={givefullUrl} className={copied ? "copied" : ""}>
+                    {shortUrl}
+                  </p>
 
                   <ContentCopyIcon
                     fontSize="small"
@@ -111,9 +129,9 @@ function UrlFormHome() {
             </div>
           )}
         </div>
-        {/* <img src={imageHome} alt="Home" className="imageHome" /> */}
       </div>
     </div>
   );
 }
 export default UrlFormHome;
+/**/
