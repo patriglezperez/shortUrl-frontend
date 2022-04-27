@@ -1,0 +1,48 @@
+/* From uiverse.io by @Alaner-xs */
+.loader {
+  --size: 5em;
+  display: inline-block;
+  width: var(--size);
+}
+
+.loader svg {
+  color: orangered;
+  display: block;
+  transform: rotateZ(0deg);
+}
+
+.loader circle {
+  stroke: currentcolor;
+  stroke-width: 5px;
+  r: 9.5px;
+  stroke-dasharray: 0.01px, 59.6802604165px;
+  stroke-dashoffset: 0;
+  animation: 1.8s cubic-bezier(0.3, 0.8, 0.1, 1) infinite go71634;
+}
+
+@keyframes go71634 {
+  0% {
+    stroke-dasharray: 0.01px, 59.6802604165px;
+    stroke-dashoffset: 0;
+  }
+
+  25% {
+    stroke-dasharray: 29.8451302083px, 29.8451302083px;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 0.01px, 59.6802604165px;
+    stroke-dashoffset: -29.8451302083px;
+  }
+
+  75% {
+    stroke-dasharray: 29.8451302083px, 29.8451302083px;
+    stroke-dashoffset: -29.8451302083px;
+  }
+
+  100% {
+    stroke-dasharray: 0.01px, 59.6802604165px;
+    stroke-dashoffset: -59.6902604165px;
+  }
+}
