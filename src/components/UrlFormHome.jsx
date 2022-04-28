@@ -73,21 +73,16 @@ function UrlFormHome() {
                 <input
                   type="text"
                   name="longUrl"
-                  className="longUrl"
+                  className="input"
                   id="longUrl"
                   placeholder="https://example.com"
                   onChange={(e) => setUrl(e.target.value)}
                 />
                 <br />
                 <br />
-                <button type="submit" className="button">
-                  <span>Create</span>
-                  <div className="line"></div>
-                  <div className="line-2"></div>
-                  <div className="speak"></div>
-                  <div className="speak one"></div>
-                  <div className="speak two"></div>
-                  <div className="speak three"></div>
+
+                <button type="submit" class="btn">
+                  Create
                 </button>
               </div>
             </form>
