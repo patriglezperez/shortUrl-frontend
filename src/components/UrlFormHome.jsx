@@ -48,76 +48,77 @@ function UrlFormHome() {
   }
 
   return (
-    <>
-      <NavBar />
-      <div className="background">
-        <Alert
-          className={copied === false ? "notVisible " : ""}
-          severity="success"
-        >
-          Url successfully copied!
-        </Alert>
+    <div className="background">
+      <div className="container">
+        <NavBar />
+        <div>
+          <Alert
+            className={copied === false ? "notVisible " : ""}
+            severity="success"
+          >
+            Url successfully copied!
+          </Alert>
 
-        <div className="page">
-          <div className="form">
-            <form onSubmit={handleCreate}>
-              <h1 className="title">
-                Get Space <br />
-                <span>URL Generator</span>
-              </h1>
-              <p>
-                Get Space URL shortener build to generate short links that
-                creates better click impression{" "}
-              </p>
-              <div className="center">
-                <input
-                  type="text"
-                  name="longUrl"
-                  className="input"
-                  id="longUrl"
-                  placeholder="https://example.com"
-                  onChange={(e) => setUrl(e.target.value)}
-                />
-                <br />
-                <br />
+          <div className="page">
+            <div className="form">
+              <form onSubmit={handleCreate}>
+                <h1 className="title">
+                  Get Space <br />
+                  <span>URL Generator</span>
+                </h1>
+                <p className="shortdescription">
+                  Get Space URL shortener build to generate short links that
+                  creates better click impression
+                </p>
+                <div className="center">
+                  <input
+                    type="text"
+                    name="longUrl"
+                    className="input"
+                    id="longUrl"
+                    placeholder="https://example.com"
+                    onChange={(e) => setUrl(e.target.value)}
+                  />
+                  <br />
+                  <br />
 
-                <button type="submit" class="btn">
-                  Create
-                </button>
-              </div>
-            </form>
-            <br />
-            {obj.length === 0 ? (
-              <div className="notVisible"></div>
-            ) : (
-              <div>
-                <CopyToClipboard
-                  text={shortUrl}
-                  onCopy={(e) => {
-                    setCopied(true);
-                    findFullUrl(shortUrl);
-                    return givefullUrl;
-                  }}
-                >
-                  <div className="card">
-                    <p href={givefullUrl} className={copied ? "copied" : ""}>
-                      {shortUrl}
-                    </p>
+                  <button type="submit" className="btn">
+                    Create
+                  </button>
+                </div>
+              </form>
+              <br />
+              {obj.length === 0 ? (
+                <div className="notVisible"></div>
+              ) : (
+                <div>
+                  <CopyToClipboard
+                    text={shortUrl}
+                    onCopy={(e) => {
+                      setCopied(true);
+                      findFullUrl(shortUrl);
+                      return givefullUrl;
+                    }}
+                  >
+                    <div className="card">
+                      <p href={givefullUrl} className={copied ? "copied" : ""}>
+                        {shortUrl}
+                      </p>
 
-                    <ContentCopyIcon
-                      fontSize="small"
-                      className={copied ? "copied" : ""}
-                      onClick={console.log("copiado")}
-                    />
-                  </div>
-                </CopyToClipboard>
-              </div>
-            )}
+                      <ContentCopyIcon
+                        fontSize="small"
+                        className={copied ? "copied" : ""}
+                        onClick={console.log("copiado")}
+                      />
+                    </div>
+                  </CopyToClipboard>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default UrlFormHome;
-/**/

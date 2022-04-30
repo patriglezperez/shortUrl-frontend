@@ -38,7 +38,14 @@ function NavBar() {
   } else {
     renderNav = (
       <div className="sign">
-        <input type="button" value="Account" className="signin" />
+        <input
+          type="button"
+          value="Account"
+          className="signin"
+          onClick={() => {
+            navigate(`/signIn`);
+          }}
+        />
         <input
           type="button"
           value="Sign up"
@@ -52,20 +59,18 @@ function NavBar() {
   }
 
   return (
-    <div className="navbar">
-      <div className="nav">
-        <div
-          className="navleft"
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          <img src={LogoImg} alt="logo" className="logo" />
-          <p>getSpace</p>
-        </div>
-
-        {renderNav}
+    <div className="nav">
+      <div
+        className="navleft"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        <img src={LogoImg} alt="logo" className="logo" />
+        <p>getSpace</p>
       </div>
+
+      {renderNav}
     </div>
   );
 }

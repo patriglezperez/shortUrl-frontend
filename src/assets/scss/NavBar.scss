@@ -1,10 +1,11 @@
 .nav {
   display: flex;
   flex-direction: row;
-  width: 100%;
   align-items: center;
   padding: 20px;
-  background-color: #0000ff1b;
+  border-bottom: 2px solid $primaryColor;
+  height: 100px;
+  width: 100%;
 }
 .navleft {
   display: flex;
