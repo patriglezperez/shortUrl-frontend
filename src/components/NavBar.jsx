@@ -6,6 +6,8 @@ function NavBar() {
   const locationUrl = window.location.href;
   const signUpView = "/SignUp";
   const signInView = "/signIn";
+  const userHomeView = "/home";
+  const shortUrlView = "/short";
 
   let renderNav;
 
@@ -31,6 +33,21 @@ function NavBar() {
           className="signup"
           onClick={() => {
             navigate(`/SignUp`);
+          }}
+        />
+      </div>
+    );
+  } else if (locationUrl.includes(userHomeView)) {
+    renderNav = <div className="sign"></div>;
+  } else if (locationUrl.includes(shortUrlView)) {
+    renderNav = (
+      <div className="sign">
+        <input
+          type="button"
+          value="Home"
+          className="home"
+          onClick={() => {
+            navigate(`/home`);
           }}
         />
       </div>

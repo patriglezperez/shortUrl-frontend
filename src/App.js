@@ -5,20 +5,28 @@ import UrlFormHome from "./components/UrlFormHome";
 import SignIn from "./components/SignIn";
 import Analytics from "./components/Analytics";
 import ShortUrl from "./components/ShortUrl";
-
+import Home from "./components/Home";
+import Start from "./components/Start";
+import StaticContext from "../context/StaticContext";
+// import { UserContextProvider } from "./context/userContext";
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<UrlFormHome />} />
-          <Route path="/:shortUrl" element={<ShortUrl />} />
-          <Route path="/signUp" element={<SignUp />} />
-          <Route path="/signIn" element={<SignIn />} />
-          <Route path="/analytics" element={<Analytics />} />
-          {/* <Route path="/urls/add" element={<NewUrl />} /> */}
-        </Routes>
-      </BrowserRouter>
+      <StaticContext.Provider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Start />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/short" element={<UrlFormHome />} />
+            <Route path="/:shortUrl" element={<ShortUrl />} />
+            <Route path="/signUp" element={<SignUp />} />
+            <Route path="/signIn" element={<SignIn />} />
+
+            <Route path="/analytics" element={<Analytics />} />
+            {/* <Route path="/urls/add" element={<NewUrl />} /> */}
+          </Routes>
+        </BrowserRouter>
+      </StaticContext.Provider>
     </div>
   );
 }

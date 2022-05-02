@@ -1,11 +1,11 @@
 import NavBar from "./NavBar";
 
-function Analytics() {
+function Start() {
   return (
     <>
       <NavBar />
-      <div>Ananlytics</div>;
+      <div>Empezamos desde aqui</div>
     </>
   );
 }
-export default Analytics;
+export default Start;

@@ -5,14 +5,32 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Alert } from "@mui/material";
 import NavBar from "./NavBar";
+import { useLocation } from "react-router-dom";
+import { useContext } from "react";
+import StaticContext from "../context/StaticContext";
 
 function UrlFormHome() {
   const [url, setUrl] = useState();
   let [shortUrl, setShortUrl] = useState([]);
   let [obj, setObj] = useState([]);
   const [copied, setCopied] = useState(false);
-  let [givefullUrl, setGiveFullUrl] = useState("");
 
+  /*Para que tenga en cuenta el token*/
+  const location = useLocation().state;
+  const user = location.user;
+  console.log(user);
+
+  const token = user.token;
+  // const config = {
+  //   headers: {
+  //     authorization: `bearer ${token}`,
+  //   },
+  // };
+
+  const context = useContext(StaticContext);
+  console.log(context, "context");
+
+  //Se borre el alert a X tiempo
   useEffect(() => {
     const timer = setTimeout(() => {
       setCopied(false);
@@ -25,6 +43,7 @@ function UrlFormHome() {
   async function handleCreate(e) {
     e.preventDefault();
     setShortUrl(null);
+
     const result = await axios
       .post(`${SERVER_ENDPOINTS}/api/urls/add`, { url })
       .then((res) => res.data);
@@ -32,19 +51,6 @@ function UrlFormHome() {
     console.log("result", result);
     setShortUrl(result.shortUrl);
     setObj(result);
-  }
-
-  //Peticion a la corta para que nos traiga la larga
-  async function findFullUrl(shortUrl) {
-    setGiveFullUrl("");
-    const result2 = await axios
-      .get(`${SERVER_ENDPOINTS}/api/urls/find/${shortUrl}`)
-      .then((res) => res.data.result);
-
-    setGiveFullUrl(result2.fullUrl);
-    console.log("result2", result2);
-    console.log("result short Url", givefullUrl);
-    return givefullUrl;
   }
 
   return (
@@ -96,14 +102,10 @@ function UrlFormHome() {
                     text={shortUrl}
                     onCopy={(e) => {
                       setCopied(true);
-                      findFullUrl(shortUrl);
-                      return givefullUrl;
                     }}
                   >
                     <div className="card">
-                      <p href={givefullUrl} className={copied ? "copied" : ""}>
-                        {shortUrl}
-                      </p>
+                      <p className={copied ? "copied" : ""}>{shortUrl}</p>
 
                       <ContentCopyIcon
                         fontSize="small"
