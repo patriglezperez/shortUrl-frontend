@@ -3,13 +3,17 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import staticContext from "../assets/mycontext/staticContext";
+import MyContext from "../mycontext/staticContext";
 
 const baseUrl = "http://localhost:3001/api/users/login";
 
 function SignIn() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
+  const { username, setUsername } = useContext(MyContext);
+
+  console.log(username, "example");
+
+  // const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState("");
 
@@ -28,9 +32,6 @@ function SignIn() {
       console.log({ error: "error in the login process" }); // Cambiar por un alert o error message midu
     }
   };
-
-  const context = useContext(staticContext);
-  console.log(context, "context");
 
   // localStorage.setItem("username", username);
   // let firstName = localStorage.getItem("username");

@@ -7,7 +7,7 @@ import { Alert } from "@mui/material";
 import NavBar from "./NavBar";
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
-import staticContext from "../assets/mycontext/staticContext";
+import staticContext from "../mycontext/staticContext";
 
 function UrlFormHome() {
   const [url, setUrl] = useState();

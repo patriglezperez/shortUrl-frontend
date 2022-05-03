@@ -7,12 +7,12 @@ import Analytics from "./components/Analytics";
 import ShortUrl from "./components/ShortUrl";
 import Home from "./components/Home";
 import Start from "./components/Start";
-import StaticContext from "./assets/mycontext/staticContext";
+import { UserContextProvider } from "./mycontext/staticContext";
 
 function App() {
   return (
     <div>
-      <StaticContext.Provider value={{ user: "", token: "" }}>
+      <UserContextProvider>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Start />} />
@@ -26,7 +26,7 @@ function App() {
             {/* <Route path="/urls/add" element={<NewUrl />} /> */}
           </Routes>
         </BrowserRouter>
-      </StaticContext.Provider>
+      </UserContextProvider>
     </div>
   );
 }
