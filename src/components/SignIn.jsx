@@ -2,6 +2,8 @@ import NavBar from "./NavBar";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import staticContext from "../assets/mycontext/staticContext";
 
 const baseUrl = "http://localhost:3001/api/users/login";
 
@@ -26,6 +28,9 @@ function SignIn() {
       console.log({ error: "error in the login process" }); // Cambiar por un alert o error message midu
     }
   };
+
+  const context = useContext(staticContext);
+  console.log(context, "context");
 
   // localStorage.setItem("username", username);
   // let firstName = localStorage.getItem("username");

@@ -7,7 +7,7 @@ import { Alert } from "@mui/material";
 import NavBar from "./NavBar";
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
-import StaticContext from "../context/StaticContext";
+import staticContext from "../assets/mycontext/staticContext";
 
 function UrlFormHome() {
   const [url, setUrl] = useState();
@@ -26,9 +26,6 @@ function UrlFormHome() {
   //     authorization: `bearer ${token}`,
   //   },
   // };
-
-  const context = useContext(StaticContext);
-  console.log(context, "context");
 
   //Se borre el alert a X tiempo
   useEffect(() => {
