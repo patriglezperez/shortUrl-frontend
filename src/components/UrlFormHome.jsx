@@ -26,7 +26,7 @@ function UrlFormHome() {
     e.preventDefault();
     setShortUrl(null);
     const result = await axios
-      .post(`${SERVER_ENDPOINTS}/api/`, { url })
+      .post(`${SERVER_ENDPOINTS}/api/urls/add`, { url })
       .then((res) => res.data);
 
     console.log("result", result);
