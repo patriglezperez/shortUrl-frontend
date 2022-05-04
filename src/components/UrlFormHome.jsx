@@ -4,8 +4,7 @@ import { SERVER_ENDPOINTS } from "../services/endpoints";
 import CopyToClipboard from "react-copy-to-clipboard";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Alert } from "@mui/material";
-import imageHome from "../assets/img/getSpace_Home.png";
-import LogoImg from "../assets/img/logoPlanet.png";
+import phone from "../assets/img/phone.webp";
 
 function UrlFormHome() {
   const [url, setUrl] = useState();
@@ -37,7 +36,7 @@ function UrlFormHome() {
     <div className="background">
       <div className="navbar">
         <div className="navleft">
-          <img src={LogoImg} alt="logo" className="logo" />
+          <img src={phone} alt="logo" className="logo" />
           <p>getSpace</p>
         </div>
         <Alert
@@ -47,29 +46,52 @@ function UrlFormHome() {
           Url successfully copied!
         </Alert>
       </div>
+      <div className="container-home">
+        <div className="left">
+          <div className="main">
+            <div>
+              <form onSubmit={handleSubmit}>
+                <h1>
+                  GetSpace es el <br />
+                  lugar donde todo sucede
+                </h1>
+                <p>
+                  Get Space es el acortador de URLs para generar enlaces cortos
+                  que crean una mejor impresión de los clicks. Es fácil. Agregra
+                  tu url y haz clic en "Crear" para conseguir una nueva más
+                  corta.
+                </p>
+                <div className="urls">
+                  <input
+                    placeholder="https://example.com"
+                    type="text"
+                    className="input"
+                    onChange={(e) => setUrl(e.target.value)}
+                  />
 
-      <div className="page">
-        <div className="form">
-          <form onSubmit={handleSubmit}>
-            <h1>Get Space URL Generator</h1>
-            <p>
-              Get Space URL shortener build to generate short links that creates
-              better click impression{" "}
-            </p>
-            <input
-              type="text"
-              name="longUrl"
-              className="longUrl"
-              id="longUrl"
-              placeholder="https://example.com"
-              onChange={(e) => setUrl(e.target.value)}
-            />
-            <br />
-            <br />
-            <button type="submit" className="button">
-              Create a link
-            </button>
-          </form>
+                  <br />
+                  <button>
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        height="24"
+                      >
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path
+                          fill="currentColor"
+                          d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"
+                        ></path>
+                      </svg>{" "}
+                      Crear
+                    </span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
           <br />
           {obj.length === 0 ? (
             <div className="notVisible"></div>
@@ -94,7 +116,10 @@ function UrlFormHome() {
             </div>
           )}
         </div>
-        <img src={imageHome} alt="Home" className="imageHome" />
+
+        <div className="right">
+          <img src={phone} alt="test" />
+        </div>
       </div>
     </div>
   );
