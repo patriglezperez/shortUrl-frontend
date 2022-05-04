@@ -63,7 +63,7 @@ function UrlFormHome() {
                 <p>
                   Get Space es el acortador de URLs para generar enlaces cortos
                   que crean una mejor impresión de los clicks. Es fácil. Agregra
-                  tu url y haz clic en "Crear" para conseguir una nueva más
+                  tu url y haz clic en "Crear" para conseguir una nueva url más
                   corta.
                 </p>
                 <div className="urls">
