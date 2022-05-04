@@ -5,7 +5,8 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Alert } from "@mui/material";
 import phone from "../assets/img/phone.webp";
-import iphone from "../assets/img/iphone2.png";
+import iphone from "../assets/img/iphoneGSpsd.png";
+import logo from "../assets/img/gsLogo.png";
 
 function UrlFormHome() {
   const [url, setUrl] = useState();
@@ -37,7 +38,7 @@ function UrlFormHome() {
     <div className="background">
       <div className="navbar">
         <div className="navleft">
-          <img src={phone} alt="logo" className="logo" />
+          <img src={logo} alt="logo" className="logo" />
           <p>getSpace</p>
         </div>
         <Alert
