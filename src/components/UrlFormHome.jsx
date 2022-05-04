@@ -34,6 +34,19 @@ function UrlFormHome() {
     setObj(result);
   }
 
+  // if (obj === null) {
+  //   return "no tenemos notas";
+  // }
+
+  const Short = ({ obj }) => {
+    console.log();
+    return (
+      <ul key={obj.id}>
+        <li>{short.shortUrl}</li>;
+      </ul>
+    );
+  };
+
   return (
     <div>
       <div className="navbar">
@@ -94,11 +107,18 @@ function UrlFormHome() {
                   </button>
                 </div>
               </form>
+              Hola
+              {obj.length === 0 ? (
+                <div className="notVisible"></div>
+              ) : (
+                <div>
+                  <Short {...obj} />)
+                </div>
+              )}
             </div>
           </div>
 
-          <br />
-          {obj.length === 0 ? (
+          {/* {obj.length === 0 ? (
             <div className="notVisible"></div>
           ) : (
             <div className="shortLink">
@@ -119,7 +139,7 @@ function UrlFormHome() {
                 />
               </CopyToClipboard>
             </div>
-          )}
+          )} */}
         </div>
 
         <div className="right">
