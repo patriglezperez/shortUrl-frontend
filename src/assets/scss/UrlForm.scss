@@ -185,8 +185,74 @@ img {
 
 .img1 {
   z-index: 1;
-  height: 455px;
+  height: 460px;
 }
 .img2 {
   z-index: 3;
+}
+
+.back-path {
+  width: 200px;
+  height: 250px;
+}
+
+.circle {
+  fill-opacity: 1;
+  stroke-opacity: 1;
+  fill: #fa4d1d;
+  position: relative;
+  z-index: 0;
+  left: -194px;
+  top: -132px;
+}
+.semicircle {
+  stroke-width: 40;
+  fill-opacity: 0;
+  stroke: #fbc3d4;
+  stroke-opacity: 1;
+  position: relative;
+  z-index: 0;
+  left: -71px;
+  top: -97px;
+  transform: rotate(-35deg);
+}
+
+.composition {
+  position: relative;
+  top: -710px;
+  right: -83px;
+}
+.star {
+  stroke-width: 0;
+  position: relative;
+  fill-opacity: 1;
+  stroke: #5e97ff;
+  stroke-opacity: 1;
+  fill: #fddc38;
+  z-index: 0;
+}
+
+.star2 {
+  stroke-width: 0;
+  position: relative;
+  fill-opacity: 1;
+  stroke: #5e97ff;
+  stroke-opacity: 1;
+  fill: #fddc38;
+  z-index: 0;
+  top: -225px;
+  right: 10px;
+  transform: rotate(-35deg);
+}
+
+.line {
+  stroke-width: 0;
+  position: relative;
+  fill-opacity: 1;
+  stroke-opacity: 1;
+  fill: #1b68e4a7;
+  z-index: 0;
+  top: -799px;
+  right: -88px;
+  transform: rotate(283deg);
 }

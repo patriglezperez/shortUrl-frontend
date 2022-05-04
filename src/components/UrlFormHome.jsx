@@ -121,6 +121,25 @@ function UrlFormHome() {
         <div className="right">
           <img src={iphone} alt="logo" className="img1" />
           <img src={phone} alt="test" className="img2" />
+          <div className="back-path">
+            <svg height="60mm" width="90mm" className="circle">
+              <circle cx="29mm" cy="28mm" r="28mm" />
+            </svg>
+            <svg height="80mm" width="80mm" className="semicircle">
+              <circle cx="0mm" cy="40mm" r="30mm" />
+            </svg>
+            <div className="composition">
+              <svg width="300" height="200" className="star">
+                <polygon points="100,10 40,198 190,78 10,78 160,198" />
+              </svg>
+              <svg width="260" height="200" className="star2">
+                <polygon points="100,10 40,198 190,78 10,78 160,198" />
+              </svg>
+            </div>
+            <svg height="20mm" width="90mm" className="line">
+              <rect width="70mm" height="25mm" rx="1mm" ry="1mm" />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
