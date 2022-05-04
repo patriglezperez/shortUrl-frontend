@@ -35,11 +35,11 @@ function UrlFormHome() {
   }
 
   return (
-    <div className="background">
+    <div>
       <div className="navbar">
         <div className="navleft">
           <img src={logo} alt="logo" className="logo" />
-          <p>getSpace</p>
+          <p className="left-logo">getSpace</p>
         </div>
         <Alert
           className={copied === false ? "notVisible " : ""}
@@ -54,7 +54,10 @@ function UrlFormHome() {
             <div>
               <form onSubmit={handleSubmit}>
                 <h1>
-                  GetSpace es el <br />
+                  <span className="blue">Ge</span>
+                  <span className="pink">tS</span>
+                  <span className="yellow">pa</span>
+                  <span className="red">ce</span> es el <br />
                   lugar donde todo sucede
                 </h1>
                 <p>
