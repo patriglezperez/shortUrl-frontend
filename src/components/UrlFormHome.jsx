@@ -5,6 +5,7 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Alert } from "@mui/material";
 import phone from "../assets/img/phone.webp";
+import iphone from "../assets/img/iphone2.png";
 
 function UrlFormHome() {
   const [url, setUrl] = useState();
@@ -118,7 +119,8 @@ function UrlFormHome() {
         </div>
 
         <div className="right">
-          <img src={phone} alt="test" />
+          <img src={iphone} alt="logo" className="img1" />
+          <img src={phone} alt="test" className="img2" />
         </div>
       </div>
     </div>

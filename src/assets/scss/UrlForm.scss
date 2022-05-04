@@ -173,7 +173,20 @@ button span:hover {
   justify-content: space-evenly;
   width: 100%;
 }
-
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 img {
   height: 500px;
+  position: absolute;
+}
+
+.img1 {
+  z-index: 1;
+  height: 455px;
+}
+.img2 {
+  z-index: 3;
 }
