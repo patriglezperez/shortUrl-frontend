@@ -63,8 +63,8 @@ function UrlFormHome() {
       </div>
       <div className="container-home">
         <div className="left">
-          <div className="main">
-            <div>
+          <div>
+            <div className="main">
               <form onSubmit={handleSubmit}>
                 <h1>
                   <span className="blue">Ge</span>
@@ -100,7 +100,7 @@ function UrlFormHome() {
                           fill="currentColor"
                           d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"
                         ></path>
-                      </svg>{" "}
+                      </svg>
                       Crear
                     </span>
                   </button>

@@ -70,6 +70,11 @@
 
 .main {
   width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 500px;
 }
 
 ////////////////
@@ -96,7 +101,7 @@
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 3rem;
   text-align: left;
 }
 
@@ -189,14 +194,19 @@ button span:hover {
   flex-wrap: wrap;
   align-items: center;
   margin: 10px;
+
+  @media (max-width: 810px) {
+    height: 150vh;
+  }
 }
 .left {
-  z-index: 999;
+  z-index: 5;
 }
 .right {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 4;
 }
 img {
   height: 500px;
