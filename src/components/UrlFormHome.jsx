@@ -42,7 +42,7 @@ function UrlFormHome() {
     console.log();
     return (
       <ul key={obj.id}>
-        <li>{short.shortUrl}</li>;
+        <li>{shortUrl.shortUrl}</li>;
       </ul>
     );
   };
@@ -74,10 +74,9 @@ function UrlFormHome() {
                   lugar donde todo sucede
                 </h1>
                 <p>
-                  Get Space es el acortador de URLs para generar enlaces cortos
-                  que crean una mejor impresión de los clicks. Es fácil. Agregra
-                  tu url y haz clic en "Crear" para conseguir una nueva url más
-                  corta.
+                  Get Space es el acortador de urls con el que conseguirás
+                  generar urls cortas que crean una mejor impresión. Es fácil.
+                  Agregra tu url y haz clic en "Crear".
                 </p>
                 <div className="urls">
                   <input
@@ -107,39 +106,33 @@ function UrlFormHome() {
                   </button>
                 </div>
               </form>
-              Hola
               {obj.length === 0 ? (
                 <div className="notVisible"></div>
               ) : (
-                <div>
-                  <Short {...obj} />)
+                <div className="short-card">
+                  <p>
+                    <a
+                      className="box"
+                      href={obj.fullUrl}
+                      target={"_blank noreferrer"}
+                    >
+                      {shortUrl}
+                    </a>
+                  </p>
+                  <CopyToClipboard
+                    text={shortUrl}
+                    onCopy={() => setCopied(true)}
+                  >
+                    <ContentCopyIcon
+                      fontSize="small"
+                      className={copied ? "copied" : ""}
+                      onClick={console.log("copiado")}
+                    />
+                  </CopyToClipboard>
                 </div>
               )}
             </div>
           </div>
-
-          {/* {obj.length === 0 ? (
-            <div className="notVisible"></div>
-          ) : (
-            <div className="shortLink">
-              <p>
-                <a
-                  className="box"
-                  href={obj.fullUrl}
-                  target={"_blank noreferrer"}
-                >
-                  {shortUrl}
-                </a>
-              </p>
-              <CopyToClipboard text={shortUrl} onCopy={() => setCopied(true)}>
-                <ContentCopyIcon
-                  fontSize="small"
-                  className={copied ? "copied" : ""}
-                  onClick={console.log("copiado")}
-                />
-              </CopyToClipboard>
-            </div>
-          )} */}
         </div>
 
         <div className="right">

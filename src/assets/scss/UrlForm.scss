@@ -28,24 +28,29 @@
   text-decoration: none;
 }
 
-.shortLink {
+.short-card {
   display: flex;
   flex-direction: row;
-  border: 1px solid $secondaryColor;
-  justify-content: space-evenly;
-  width: 40%;
   align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+  width: 40%;
+  height: 50px;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 1px solid #6a9ae8;
+  transition: all 0.2s;
+  box-shadow: 12px 12px 2px 1px #6a9ae8;
 }
 
-.shortLink:hover {
-  color: #fff;
-  background-color: $secondaryColor;
+.short-card:hover {
+  box-shadow: -12px 12px 2px -1px #6a9ae8;
 }
 
 /*Boton de copiar*/
 .copied {
   // background-color: #ffffff;
-  color: #e896ea;
+  color: #6a9ae8;
 }
 
 /*NavBar*/
