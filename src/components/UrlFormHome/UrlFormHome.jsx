@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { SERVER_ENDPOINTS } from "../../services/endpoints";
 import CopyToClipboard from "react-copy-to-clipboard";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Alert } from "@mui/material";
@@ -14,6 +13,7 @@ function UrlFormHome() {
   let [obj, setObj] = useState([]);
   const [copied, setCopied] = useState(false);
 
+  //as time goes by, the alert disappears
   useEffect(() => {
     const timer = setTimeout(() => {
       setCopied(false);
@@ -22,11 +22,12 @@ function UrlFormHome() {
     return () => clearTimeout(timer);
   }, [copied]);
 
+  //function to create the short url
   async function handleSubmit(e) {
     e.preventDefault();
     setShortUrl(null);
     const result = await axios
-      .post(`${SERVER_ENDPOINTS}/api/urls/add`, { url })
+      .post(`${process.env.SERVER_ENDPOINTS}/api/urls/add`, { url })
       .then((res) => res.data);
 
     setShortUrl(result.shortUrl);

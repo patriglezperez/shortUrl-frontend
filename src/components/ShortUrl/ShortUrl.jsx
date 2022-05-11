@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { SERVER_ENDPOINTS } from "../../services/endpoints";
 
 function ShortUrl() {
   const short = useParams();
@@ -13,7 +12,7 @@ function ShortUrl() {
       setGiveFullUrl("");
       const shortUrl = short.shortUrl;
       const result = await axios
-        .get(`${SERVER_ENDPOINTS}/api/urls/find/${shortUrl}`)
+        .get(`${process.env.SERVER_ENDPOINTS}/api/urls/find/${shortUrl}`)
         .then((res) => res.data.result);
 
       const full = await result.fullUrl;
