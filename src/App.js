@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import UrlFormHome from "./components/UrlFormHome";
-import ShortUrl from "./components/ShortUrl";
+import UrlFormHome from "./components/UrlFormHome/UrlFormHome";
+import ShortUrl from "./components/ShortUrl/ShortUrl";
 
 function App() {
   return (

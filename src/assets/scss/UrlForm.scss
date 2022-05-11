@@ -28,24 +28,29 @@
   text-decoration: none;
 }
 
-.shortLink {
+.short-card {
   display: flex;
   flex-direction: row;
-  border: 1px solid $secondaryColor;
-  justify-content: space-evenly;
-  width: 40%;
   align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+  width: 40%;
+  height: 50px;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 1px solid #6a9ae8;
+  transition: all 0.2s;
+  box-shadow: 12px 12px 2px 1px #6a9ae8;
 }
 
-.shortLink:hover {
-  color: #fff;
-  background-color: $secondaryColor;
+.short-card:hover {
+  box-shadow: -12px 12px 2px -1px #6a9ae8;
 }
 
-/*Boton de copiar*/
+/*Copy button*/
 .copied {
   // background-color: #ffffff;
-  color: #e896ea;
+  color: #6a9ae8;
 }
 
 /*NavBar*/
@@ -65,11 +70,14 @@
 
 .main {
   width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 500px;
 }
 
-////////////////
-
-//titulo
+//title
 .blue {
   color: #6a9ae8;
   letter-spacing: 0.25em;
@@ -91,7 +99,7 @@
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 3rem;
   text-align: left;
 }
 
@@ -184,14 +192,19 @@ button span:hover {
   flex-wrap: wrap;
   align-items: center;
   margin: 10px;
+
+  @media (max-width: 810px) {
+    height: 150vh;
+  }
 }
 .left {
-  z-index: 999;
+  z-index: 5;
 }
 .right {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 4;
 }
 img {
   height: 500px;

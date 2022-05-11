@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { SERVER_ENDPOINTS } from "../services/endpoints";
+import { SERVER_ENDPOINTS } from "../../services/endpoints";
 import CopyToClipboard from "react-copy-to-clipboard";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Alert } from "@mui/material";
-import phone from "../assets/img/phone.webp";
-import iphone from "../assets/img/iphoneGSpsd.png";
-import logo from "../assets/img/gsLogo.png";
+import phone from "../../assets/img/phone.webp";
+import iphone from "../../assets/img/iphoneGSpsd.png";
+import logo from "../../assets/img/gsLogo.png";
 
 function UrlFormHome() {
   const [url, setUrl] = useState();
@@ -29,7 +29,6 @@ function UrlFormHome() {
       .post(`${SERVER_ENDPOINTS}/api/urls/add`, { url })
       .then((res) => res.data);
 
-    console.log("result", result);
     setShortUrl(result.shortUrl);
     setObj(result);
   }
@@ -50,8 +49,8 @@ function UrlFormHome() {
       </div>
       <div className="container-home">
         <div className="left">
-          <div className="main">
-            <div>
+          <div>
+            <div className="main">
               <form onSubmit={handleSubmit}>
                 <h1>
                   <span className="blue">Ge</span>
@@ -61,10 +60,9 @@ function UrlFormHome() {
                   lugar donde todo sucede
                 </h1>
                 <p>
-                  Get Space es el acortador de URLs para generar enlaces cortos
-                  que crean una mejor impresión de los clicks. Es fácil. Agregra
-                  tu url y haz clic en "Crear" para conseguir una nueva url más
-                  corta.
+                  Get Space es el acortador de urls con el que conseguirás
+                  generar urls cortas que crean una mejor impresión. Es fácil.
+                  Agregra tu url y haz clic en "Crear".
                 </p>
                 <div className="urls">
                   <input
@@ -88,38 +86,38 @@ function UrlFormHome() {
                           fill="currentColor"
                           d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"
                         ></path>
-                      </svg>{" "}
+                      </svg>
                       Crear
                     </span>
                   </button>
                 </div>
               </form>
+              {obj.length === 0 ? (
+                <div className="notVisible"></div>
+              ) : (
+                <div className="short-card">
+                  <p>
+                    <a
+                      className="box"
+                      href={obj.fullUrl}
+                      target={"_blank noreferrer"}
+                    >
+                      {shortUrl}
+                    </a>
+                  </p>
+                  <CopyToClipboard
+                    text={shortUrl}
+                    onCopy={() => setCopied(true)}
+                  >
+                    <ContentCopyIcon
+                      fontSize="small"
+                      className={copied ? "copied" : ""}
+                    />
+                  </CopyToClipboard>
+                </div>
+              )}
             </div>
           </div>
-
-          <br />
-          {obj.length === 0 ? (
-            <div className="notVisible"></div>
-          ) : (
-            <div className="shortLink">
-              <p>
-                <a
-                  className="box"
-                  href={obj.fullUrl}
-                  target={"_blank noreferrer"}
-                >
-                  {shortUrl}
-                </a>
-              </p>
-              <CopyToClipboard text={shortUrl} onCopy={() => setCopied(true)}>
-                <ContentCopyIcon
-                  fontSize="small"
-                  className={copied ? "copied" : ""}
-                  onClick={console.log("copiado")}
-                />
-              </CopyToClipboard>
-            </div>
-          )}
         </div>
 
         <div className="right">

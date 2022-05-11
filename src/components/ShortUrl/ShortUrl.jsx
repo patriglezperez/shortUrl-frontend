@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { SERVER_ENDPOINTS } from "../services/endpoints";
+import { SERVER_ENDPOINTS } from "../../services/endpoints";
 
 function ShortUrl() {
   const short = useParams();
