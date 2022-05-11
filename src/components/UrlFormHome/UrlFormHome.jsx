@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { SERVER_ENDPOINTS } from "../services/endpoints";
+import { SERVER_ENDPOINTS } from "../../services/endpoints";
 import CopyToClipboard from "react-copy-to-clipboard";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Alert } from "@mui/material";
-import phone from "../assets/img/phone.webp";
-import iphone from "../assets/img/iphoneGSpsd.png";
-import logo from "../assets/img/gsLogo.png";
+import phone from "../../assets/img/phone.webp";
+import iphone from "../../assets/img/iphoneGSpsd.png";
+import logo from "../../assets/img/gsLogo.png";
 
 function UrlFormHome() {
   const [url, setUrl] = useState();
@@ -29,23 +29,9 @@ function UrlFormHome() {
       .post(`${SERVER_ENDPOINTS}/api/urls/add`, { url })
       .then((res) => res.data);
 
-    console.log("result", result);
     setShortUrl(result.shortUrl);
     setObj(result);
   }
-
-  // if (obj === null) {
-  //   return "no tenemos notas";
-  // }
-
-  const Short = ({ obj }) => {
-    console.log();
-    return (
-      <ul key={obj.id}>
-        <li>{shortUrl.shortUrl}</li>;
-      </ul>
-    );
-  };
 
   return (
     <div>
@@ -126,7 +112,6 @@ function UrlFormHome() {
                     <ContentCopyIcon
                       fontSize="small"
                       className={copied ? "copied" : ""}
-                      onClick={console.log("copiado")}
                     />
                   </CopyToClipboard>
                 </div>
