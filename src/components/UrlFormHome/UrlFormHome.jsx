@@ -102,11 +102,11 @@ function UrlFormHome() {
                       href={obj.fullUrl}
                       target={"_blank noreferrer"}
                     >
-                      {shortUrl}
+                      http://localhost:3000/{shortUrl}
                     </a>
                   </p>
                   <CopyToClipboard
-                    text={shortUrl}
+                    text={`http://localhost:3000/${shortUrl}`}
                     onCopy={() => setCopied(true)}
                   >
                     <ContentCopyIcon

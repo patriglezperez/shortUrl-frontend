@@ -25,15 +25,15 @@ function ShortUrl() {
 
   const pageRender =
     givefullUrl === "" ? (
-      <div class="loader">
+      <div className="loader">
         <svg viewBox="0 0 24 24">
           <circle
             cx="12"
             cy="12"
             r="10"
             fill="none"
-            stroke-width="4"
-            stroke-linecap="round"
+            strokeWidth="4"
+            strokeLinecap="round"
           ></circle>
         </svg>
       </div>
