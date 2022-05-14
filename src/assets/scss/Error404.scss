@@ -1,0 +1,67 @@
+.homeButton {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  color: white;
+
+  background: #5e97ff;
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 16px;
+}
+
+.homeButton svg {
+  margin-right: 3px;
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.homeButton span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.homeButton:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+.homeButton:hover span {
+  transform: translateX(7px);
+}
+
+.image-errors {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  h1 {
+    margin: 0px;
+    font-size: 150px;
+    color: #fbc3d4;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  img {
+    position: relative;
+    height: 250px;
+  }
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 70vh;
+}
+
+.letters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
