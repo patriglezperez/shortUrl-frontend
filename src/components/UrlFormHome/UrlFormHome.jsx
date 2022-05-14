@@ -36,7 +36,7 @@ function UrlFormHome() {
   }
 
   return (
-    <div>
+    <>
       <div className="navbar">
         <div className="navleft">
           <svg
@@ -63,8 +63,8 @@ function UrlFormHome() {
           Url successfully copied!
         </Alert>
       </div>
-      <div className="container-home">
-        <div className="left">
+      <div className="container-home container">
+        <div className="left ">
           <div>
             <div className="main">
               <form onSubmit={handleSubmit}>
@@ -160,7 +160,7 @@ function UrlFormHome() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 export default UrlFormHome;

@@ -1,12 +1,3 @@
-.page {
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  text-align: center;
-  height: 80vh;
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -64,6 +55,16 @@
   box-shadow: 6px 6px 13px -2px rgba(20, 79, 170, 0.6);
   background-color: #1b69e4;
   margin-bottom: 20px;
+  width: 100%;
+
+  @media (max-width: 810px) {
+    width: 100vh;
+
+    p {
+      font-size: 7px;
+    }
+  }
+
   p {
     margin-left: 10px;
     font-weight: 500;
@@ -107,7 +108,7 @@ h1 {
 }
 
 p {
-  font-size: 20px;
+  font-size: 1.5rem;
   text-align: left;
 
   line-height: 30px;
@@ -123,7 +124,7 @@ p {
 
 //Input
 .input {
-  width: 80%;
+  width: 28rem;
   max-width: 80%;
   height: 60px;
   line-height: 28px;
@@ -191,23 +192,28 @@ button span:hover {
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
-  height: 60vh;
   flex-wrap: wrap;
   align-items: center;
   margin: 10px;
-
+  height: 60vh;
+  position: relative;
   @media (max-width: 810px) {
     height: 90vh;
   }
 }
 .left {
   z-index: 5;
+  position: relative;
 }
 .right {
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 4;
+  position: relative;
+  @media (max-width: 810px) {
+    top: 200px;
+  }
 }
 img {
   height: 500px;
