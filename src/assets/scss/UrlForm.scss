@@ -1,9 +1,3 @@
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 .longUrl {
   width: 100%;
   height: 50px;
@@ -32,53 +26,34 @@
   border: 1px solid #6a9ae8;
   transition: all 0.2s;
   box-shadow: 12px 12px 2px 1px #6a9ae8;
+
+  @media (max-width: 426px) {
+    width: 40%;
+  }
+
+  @media (max-width: 426px) {
+    p {
+      margin-right: 65px;
+    }
+  }
 }
 
 .short-card:hover {
   box-shadow: -12px 12px 2px -1px #6a9ae8;
 }
 
-/*Copy button*/
+//Copy button
 .copied {
-  // background-color: #ffffff;
   color: #6a9ae8;
-}
-
-/*NavBar*/
-.navleft {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 5px;
-  color: white;
-  -webkit-box-shadow: 6px 6px 13px -2px rgba(20, 79, 170, 0.6);
-  box-shadow: 6px 6px 13px -2px rgba(20, 79, 170, 0.6);
-  background-color: #1b69e4;
-  margin-bottom: 20px;
-  width: 100%;
-
-  @media (max-width: 810px) {
-    width: 100vh;
-
-    p {
-      font-size: 7px;
-    }
-  }
-
-  p {
-    margin-left: 10px;
-    font-weight: 500;
-    letter-spacing: 0.3rem;
-  }
 }
 
 .main {
   width: 600px;
   display: flex;
+  height: 450px;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: 500px;
+  align-items: left;
+  justify-content: space-around;
 }
 
 //title
@@ -103,16 +78,28 @@
 }
 
 h1 {
-  font-size: 3rem;
-  text-align: left;
+  font-size: 40px;
+
+  @media (max-width: 769px) {
+    font-size: 23px;
+  }
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 20px;
   text-align: left;
-
   line-height: 30px;
   font-weight: 200;
+  margin-right: 30px;
+
+  @media (max-width: 1024px) {
+    width: 45%;
+    font-size: 15px;
+  }
+  @media (max-width: 769px) {
+    width: 45%;
+    font-size: 15px;
+  }
 }
 
 .urls {
@@ -120,6 +107,13 @@ p {
   flex-direction: row;
   justify-content: left;
   align-items: center;
+
+  @media (max-width: 769px) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 //Input
@@ -128,8 +122,8 @@ p {
   max-width: 80%;
   height: 60px;
   line-height: 28px;
-  padding: 0 1rem;
-  padding-left: 2.5rem;
+  padding: 1px;
+  padding-left: 20px;
   border: 2px solid transparent;
   border-radius: 8px;
   outline: none;
@@ -137,6 +131,10 @@ p {
   color: #0d0c22;
   transition: 0.3s ease;
   margin-right: 10px;
+
+  @media (max-width: 769px) {
+    width: 15rem;
+  }
 }
 
 .input::placeholder {
@@ -153,10 +151,10 @@ input:hover {
 
 .icon {
   position: absolute;
-  left: 1rem;
+  left: 10px;
   fill: #9e9ea7;
-  width: 1rem;
-  height: 1rem;
+  width: 10px;
+  height: 10px;
 }
 
 //Create
@@ -197,8 +195,35 @@ button span:hover {
   margin: 10px;
   height: 60vh;
   position: relative;
-  @media (max-width: 810px) {
-    height: 90vh;
+
+  @media (min-width: 770px) and (max-width: 1024px) {
+    justify-content: center;
+    width: 100%;
+    margin-left: -5px;
+  }
+  @media (min-width: 581px) and (max-width: 769px) {
+    justify-content: center;
+    width: 90%;
+    margin-left: -5px;
+  }
+
+  @media (min-width: 425px) and (max-width: 580px) {
+    justify-content: center;
+    margin-left: 136px;
+  }
+
+  @media (min-width: 375px) and (max-width: 424px) {
+    justify-content: center;
+    margin-left: 140px;
+  }
+  @media (min-width: 321px) and (max-width: 374px) {
+    justify-content: center;
+    margin-left: 150px;
+  }
+
+  @media (max-width: 320px) {
+    justify-content: center;
+    margin-left: 170px;
   }
 }
 .left {
@@ -209,10 +234,12 @@ button span:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   z-index: 4;
   position: relative;
-  @media (max-width: 810px) {
-    top: 200px;
+
+  @media (max-width: 769px) {
+    height: 110vh;
   }
 }
 img {
@@ -223,14 +250,30 @@ img {
 .img1 {
   z-index: 1;
   height: 460px;
+
+  @media (max-width: 769px) {
+    height: 300px;
+    right: 156px;
+    top: 134px;
+  }
 }
 .img2 {
   z-index: 3;
+  @media (max-width: 769px) {
+    height: 325px;
+    right: 138px;
+    top: 121px;
+  }
 }
 
 .back-path {
   width: 200px;
   height: 250px;
+
+  @media (max-width: 769px) {
+    width: 100px;
+    height: 125px;
+  }
 }
 
 .circle {
@@ -241,7 +284,28 @@ img {
   z-index: 0;
   left: -194px;
   top: -125px;
+
+  @media (min-width: 427px) and (max-width: 769px) {
+    left: -296px;
+    top: -294px;
+
+    circle {
+      cx: 17.5mm;
+      cy: 14mm;
+      r: 12mm;
+    }
+  }
+  @media (max-width: 426px) {
+    left: -296px;
+    top: -161px;
+    circle {
+      cx: 17.5mm;
+      cy: 14mm;
+      r: 12mm;
+    }
+  }
 }
+
 .semicircle {
   stroke-width: 40;
   fill-opacity: 0;
@@ -252,13 +316,47 @@ img {
   left: -71px;
   top: -97px;
   transform: rotate(-35deg);
+
+  @media (max-width: 769px) {
+    stroke-width: 25;
+    left: -197px;
+    top: -379px;
+
+    circle {
+      cx: 0mm;
+      cy: 20mm;
+      r: 15mm;
+    }
+  }
+  @media (max-width: 426px) {
+    stroke-width: 25;
+    left: -197px;
+    top: -258px;
+
+    circle {
+      cx: 0mm;
+      cy: 20mm;
+      r: 15mm;
+    }
+  }
 }
 
 .composition {
   position: relative;
   top: -710px;
   right: -83px;
+
+  @media (min-width: 426px) and (max-width: 769px) {
+    top: -889px;
+    right: 182px;
+  }
+
+  @media (max-width: 426px) {
+    top: -767px;
+    right: 182px;
+  }
 }
+
 .star {
   stroke-width: 0;
   position: relative;
@@ -292,6 +390,24 @@ img {
   top: -799px;
   right: -88px;
   transform: rotate(283deg);
+
+  @media (max-width: 788px) {
+    top: -1137px;
+    right: 166px;
+
+    rect {
+      width: 35mm;
+      height: 12.5mm;
+    }
+  }
+  @media (max-width: 426px) {
+    top: -1013px;
+    right: 166px;
+    rect {
+      width: 35mm;
+      height: 12.5mm;
+    }
+  }
 }
 
 //logo
