@@ -1,0 +1,172 @@
+.main {
+  width: 600px;
+  display: flex;
+  height: 506px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 999;
+
+  @media (max-width: 769px) {
+    align-items: center;
+  }
+}
+
+//title
+.blue {
+  color: #6a9ae8;
+  letter-spacing: 0.25em;
+}
+
+.pink {
+  color: #fbc3d4;
+  letter-spacing: 0.25em;
+}
+
+.yellow {
+  color: #fddc38;
+  letter-spacing: 0.25em;
+}
+
+.red {
+  color: #fa4d1d;
+  letter-spacing: 0.25em;
+}
+
+h1 {
+  font-size: 40px;
+
+  @media (max-width: 769px) {
+    text-align: center;
+    font-size: 23px;
+  }
+}
+
+p {
+  font-size: 20px;
+  text-align: left;
+  line-height: 30px;
+  font-weight: 200;
+  margin-left: 15px;
+  margin-right: 15px;
+
+  @media (max-width: 1024px) {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+  }
+  @media (max-width: 769px) {
+    font-size: 15px;
+  }
+}
+
+.urls {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+
+  @media (max-width: 769px) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: left;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+//Input
+.input {
+  width: 28rem;
+  max-width: 80%;
+  height: 60px;
+  line-height: 28px;
+  padding: 1px;
+  padding-left: 20px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+  margin-right: 10px;
+
+  @media (max-width: 769px) {
+    width: 20rem;
+  }
+}
+
+.input::placeholder {
+  color: #9e9ea7;
+}
+
+.input:focus,
+input:hover {
+  outline: none;
+  border-color: #1b68e4a7;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(76, 110, 234, 0.1);
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+  fill: #9e9ea7;
+  width: 10px;
+  height: 10px;
+}
+
+//Create
+button {
+  border: 2px solid #1b69e4;
+  background-color: #1b69e4;
+  border-radius: 8px;
+  padding: 0.8em 1.2em 0.8em 1em;
+  transition: all ease-in-out 0.2s;
+  font-size: 16px;
+}
+
+button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #4582e487;
+  color: #000;
+}
+
+button span:hover {
+  color: #000;
+}
+
+.short-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+  width: 55%;
+  height: 50px;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 1px solid #6a9ae8;
+  transition: all 0.2s;
+  box-shadow: 12px 12px 2px 1px #6a9ae8;
+
+  @media (max-width: 426px) {
+    width: 80%;
+  }
+}
+.short-card:hover {
+  box-shadow: -12px 12px 2px -1px #6a9ae8;
+}
+
+//Copy button
+.copied {
+  color: #6a9ae8;
+}
