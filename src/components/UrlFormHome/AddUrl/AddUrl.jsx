@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, useContext } from "react";
-import { SERVER_ENDPOINTS } from "../../../services/endpoints";
 import CopyToClipboard from "react-copy-to-clipboard";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import StaticContext from "../../../context/staticContext";
@@ -18,7 +17,7 @@ function UrlFormHome() {
     e.preventDefault();
     setShortUrl(null);
     const result = await axios
-      .post(`${SERVER_ENDPOINTS}/api/urls/add`, { url })
+      .post(`http://localhost:3001/api/urls/add`, { url })
       .then((res) => res.data);
 
     setShortUrl(result.shortUrl);
