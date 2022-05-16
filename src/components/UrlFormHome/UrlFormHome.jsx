@@ -12,7 +12,7 @@ function UrlFormHome() {
   let [shortUrl, setShortUrl] = useState([]);
   let [obj, setObj] = useState([]);
   const [copied, setCopied] = useState(false);
-  const locationpage = "https://get-space.vercel.app/";
+  const locationpage = "get-space.vercel.app/";
 
   //we will delete the alert at x time
   useEffect(() => {
@@ -103,7 +103,7 @@ function UrlFormHome() {
                   </a>
                 </p>
                 <CopyToClipboard
-                  text={`${locationpage}/${shortUrl}`}
+                  text={`${locationpage}${shortUrl}`}
                   onCopy={() => setCopied(true)}
                 >
                   <ContentCopyIcon
