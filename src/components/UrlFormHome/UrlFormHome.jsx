@@ -12,8 +12,8 @@ function UrlFormHome() {
   let [shortUrl, setShortUrl] = useState([]);
   let [obj, setObj] = useState([]);
   const [copied, setCopied] = useState(false);
-  const page = window.location.href;
-  console.log(page);
+  const locationpage = "https://get-space.vercel.app/";
+
   //we will delete the alert at x time
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -98,12 +98,12 @@ function UrlFormHome() {
                     href={obj.fullUrl}
                     target={"_blank noreferrer"}
                   >
-                    {page}
+                    {locationpage}
                     {shortUrl}
                   </a>
                 </p>
                 <CopyToClipboard
-                  text={`${process.env.REACT_APP_URL}/${shortUrl}`}
+                  text={`${locationpage}/${shortUrl}`}
                   onCopy={() => setCopied(true)}
                 >
                   <ContentCopyIcon
