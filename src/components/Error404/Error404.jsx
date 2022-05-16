@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import CatError from "../../assets/img/images/error.png";
+import ErrorPhone from "../../assets/img/error_phone.png";
 
 function Error404() {
   const navigate = useNavigate();
@@ -8,15 +8,10 @@ function Error404() {
     <div>
       <div className="error-page">
         <div className="image-errors">
-          <h1>
-            4 <span className="yellow">0</span>4
-          </h1>
-          <div>
-            <img src={CatError} alt="error" />
-          </div>
+          <img src={ErrorPhone} alt="error" />
         </div>
         <div className="letters">
-          <h3 className="red">UPSS, ESTA PÁGINA NO EXISTE</h3>
+          <h3 className="blue">UPSS, ESTA PÁGINA NO EXISTE</h3>
           <p>
             Pero... no te preocupes, accede a la página principal y busca lo que
             necesites
