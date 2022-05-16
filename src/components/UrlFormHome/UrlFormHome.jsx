@@ -12,7 +12,8 @@ function UrlFormHome() {
   let [shortUrl, setShortUrl] = useState([]);
   let [obj, setObj] = useState([]);
   const [copied, setCopied] = useState(false);
-
+  const page = window.location.href;
+  console.log(page);
   //we will delete the alert at x time
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -97,6 +98,7 @@ function UrlFormHome() {
                     href={obj.fullUrl}
                     target={"_blank noreferrer"}
                   >
+                    {page}
                     {shortUrl}
                   </a>
                 </p>
